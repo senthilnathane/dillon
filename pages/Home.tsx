@@ -154,6 +154,36 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Team Section */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-blue-900 font-bold tracking-wider text-sm uppercase mb-4">Our Leadership</h2>
+            <h3 className="text-3xl sm:text-4xl font-serif text-slate-900">Meet Our Founders</h3>
+            <p className="text-slate-600 mt-4 max-w-2xl mx-auto">
+              Praveen Kumar - Co-Founder and Head of Strategy, Technology and Business Consulting
+            </p>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              Dinesh - Co-Founder and Head of Financial Strategy and Advisory
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <div className="rounded-2xl shadow-2xl max-w-4xl w-full overflow-hidden bg-white border border-slate-200 grid grid-cols-1 md:grid-cols-2">
+              <div className="p-8 flex flex-col justify-center items-center bg-gradient-to-br from-blue-50 to-slate-50">
+                <div className="text-6xl font-bold text-blue-400 mb-4">01</div>
+                <h4 className="text-2xl font-bold text-slate-900 mb-2">Praveen Kumar</h4>
+                <p className="text-slate-600 text-center text-sm">Co-Founder and Head of Strategy, Technology and Business Consulting</p>
+              </div>
+              <div className="p-8 flex flex-col justify-center items-center bg-gradient-to-br from-slate-50 to-blue-50">
+                <div className="text-6xl font-bold text-blue-400 mb-4">02</div>
+                <h4 className="text-2xl font-bold text-slate-900 mb-2">Dinesh</h4>
+                <p className="text-slate-600 text-center text-sm">Co-Founder and Head of Financial Strategy and Advisory</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Services */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
