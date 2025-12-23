@@ -1,35 +1,847 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dillon & Bird Partners | Strategic Growth Across GCC</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dillon & Bird Partners | Strategic Growth Across the GCC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      .font-serif {
-        font-family: 'Playfair Display', serif;
-      }
+        :root {
+            --primary-blue: #0A2463;
+            --secondary-blue: #1E3A8A;
+            --accent-gold: #C49A6C;
+            --light-blue: #E8F1F8;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --light-gray: #F5F7FA;
+            --white: #FFFFFF;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-blue);
+        }
+        
+        h4 {
+            font-size: 1.3rem;
+            color: var(--secondary-blue);
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-light {
+            background-color: var(--light-gray);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid var(--primary-blue);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary-blue);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .btn-accent:hover {
+            background-color: transparent;
+            color: var(--accent-gold);
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+        
+        .header-scrolled {
+            padding: 10px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent-gold);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: var(--transition);
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 36, 99, 0.85), rgba(10, 36, 99, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 180px 0 120px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .about-item {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .about-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .about-item h3 {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .about-item h3 i {
+            color: var(--accent-gold);
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .leadership {
+            margin-top: 80px;
+        }
+        
+        .leaders {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .leader-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            width: 280px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .leader-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .leader-img {
+            height: 200px;
+            background-color: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary-blue);
+        }
+        
+        .leader-info {
+            padding: 25px;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 25px;
+        }
+        
+        .service-header h3 {
+            color: var(--white);
+        }
+        
+        .service-body {
+            padding: 25px;
+        }
+        
+        .service-body ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .service-body li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .service-body li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+        
+        .integrated-service {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .integrated-service:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .step {
+            background-color: var(--white);
+            padding: 35px 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .step:hover {
+            transform: translateY(-10px);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--accent-gold);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .step h3 {
+            margin-top: 15px;
+            color: var(--primary-blue);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .contact-info {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .contact-detail i {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-right: 15px;
+            width: 40px;
+        }
+        
+        .closing-message {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-top: 40px;
+            padding: 25px;
+            background-color: var(--light-blue);
+            border-left: 4px solid var(--accent-gold);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            margin: 0 15px;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+        
+        .copyright {
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--white);
+                box-shadow: var(--shadow);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav li {
+                margin: 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            nav a {
+                display: block;
+                padding: 15px 20px;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .tagline {
+                font-size: 1.4rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
-  }
-}
-</script>
 </head>
-  <body class="bg-slate-50 text-slate-900">
-    <div id="root"></div>
-  </body>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#home" class="logo">Dillon & <span>Bird</span> Partners</a>
+            
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">How We Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Dillon & Bird Partners</h1>
+            <p class="tagline">Do More - Strategic growth across the GCC</p>
+            <p>We partner with founders, family enterprises, and growth-stage companies to build resilient businesses, unlock sustainable growth, and execute with discipline across the GCC.</p>
+            <a href="#contact" class="btn btn-accent">Partner With Us</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about section-light">
+        <div class="container">
+            <h2>Who We Are</h2>
+            <p>Long-term advisory and hands-on execution across the GCC</p>
+            
+            <div class="about-content">
+                <div class="about-item">
+                    <h3><i class="fas fa-handshake"></i> Strategic Partners for Growth</h3>
+                    <p>We work as a long-term strategic partner to leadership teams, combining advisory rigor with hands-on execution. Committed to both strategy and practical implementation for leaders.</p>
+                </div>
+                
+                <div class="about-item">
+                    <h3><i class="fas fa-sync-alt"></i> End-to-End Support</h3>
+                    <p>We support businesses navigating growth, complexity, restructuring, and transition—across their entire corporate lifecycle. End-to-end support through every stage of corporate change.</p>
+                </div>
+                
+                <div class="about-item">
+                    <h3><i class="fas fa-map-marker-alt"></i> Regional Presence</h3>
+                    <p>Headquartered in the UAE with an active presence in Oman. We serve clients across the GCC with deep regional understanding and a global perspective. Local knowledge combined with international expertise.</p>
+                </div>
+            </div>
+            
+            <div class="leadership">
+                <h2>Leadership</h2>
+                <p>Core leadership and strategic roles</p>
+                
+                <div class="leaders">
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="leader-info">
+                            <h3>Praveen Kumar</h3>
+                            <p>Co-Founder and Head of Strategy, Technology, and Business Consulting</p>
+                        </div>
+                    </div>
+                    
+                    <div class="leader-card">
+                        <div class="leader-img">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="leader-info">
+                            <h3>Dinesh</h3>
+                            <p>Co-Founder and Head of Financial Strategy and Advisory</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p>Comprehensive support for businesses across the GCC</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Corporate Lifecycle Advisory</h3>
+                    </div>
+                    <div class="service-body">
+                        <ul>
+                            <li>Company formation and market entry across the UAE and GCC</li>
+                            <li>Ongoing compliance, governance, and regulatory support</li>
+                            <li>Business restructuring and turnaround advisory</li>
+                            <li>Insolvency, bankruptcy coordination, and liquidation support</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-header">
+                        <h3>Integrated Services</h3>
+                    </div>
+                    <div class="service-body">
+                        <div class="integrated-service">
+                            <h4>Management Consulting</h4>
+                            <p>Growth strategy, operating model design, performance improvement, and execution roadmaps.</p>
+                        </div>
+                        
+                        <div class="integrated-service">
+                            <h4>Accounting and Financial Advisory</h4>
+                            <p>Investor-ready reporting, audit preparation, financial controls, and compliance.</p>
+                        </div>
+                        
+                        <div class="integrated-service">
+                            <h4>Technology Advisory</h4>
+                            <p>Workflow automation, scalable systems, and business-aligned digital enablement.</p>
+                        </div>
+                        
+                        <div class="integrated-service">
+                            <h4>Fractional CXO Services</h4>
+                            <p>Senior CFO, CTO, and CMO leadership without full-time overhead.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process section-light">
+        <div class="container">
+            <h2>How We Engage</h2>
+            <p>A clear, hands-on process to drive lasting results</p>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Diagnose</h3>
+                    <p>Rapid assessment of strategy, operations, financials, and compliance.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p>Clear, prioritized solutions aligned to business stage and constraints.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Execute</h3>
+                    <p>Hands-on support to implement changes and unlock results.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Transfer</h3>
+                    <p>Capability building to ensure sustainability beyond the engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>We partner with leaders ready to do the work.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>Headquartered in UAE with active presence in Oman</p>
+                            <p>Serving clients across the GCC</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@dillonbird.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h4>Website</h4>
+                            <p>dillonbird.com</p>
+                        </div>
+                    </div>
+                    
+                    <a href="mailto:info@dillonbird.com" class="btn">Get In Touch</a>
+                </div>
+                
+                <div>
+                    <p class="closing-message">"Growth today requires more than ambition. It demands clarity, discipline, and the ability to execute through uncertainty. We partner with leaders ready to do the work."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Dillon & Bird Partners</div>
+                
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#process">How We Work</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <p class="copyright">&copy; 2023 Dillon & Bird Partners. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
